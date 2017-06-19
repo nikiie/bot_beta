@@ -11,7 +11,8 @@ end
 
 post '/callback' do
   body = request.body.read
-  put "へろく〜〜〜〜"
+  p "へろく〜〜〜〜"
+  p body
   signature = request.env['HTTP_X_LINE_SIGNATURE']
   unless client.validate_signature(body, signature)
     error 400 do 'Bad Request' end
