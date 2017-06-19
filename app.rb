@@ -12,9 +12,6 @@ end
 post '/callback' do
   body = request.body.read
   puts "へろく〜〜〜〜"
-  headers = request.env.select do |key, val|
-  	key.start_with?("HTTP_")
-  puts headers
   puts body
   signature = request.env['HTTP_X_LINE_SIGNATURE']
   unless client.validate_signature(body, signature)
