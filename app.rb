@@ -11,7 +11,7 @@ end
 
 post '/callback' do
   body = request.body.read
-  puts "へろく〜〜〜〜"
+  puts "request.body:------------"
   puts body
   signature = request.env['HTTP_X_LINE_SIGNATURE']
   unless client.validate_signature(body, signature)
