@@ -25,7 +25,6 @@ post '/callback' do
       case event.type
       when Line::Bot::Event::MessageType::Text
         puts "プッシュしてるぞ"
-        puts request.post        
         message = {
           type: 'text',
           text: event.message['text']+'a'
