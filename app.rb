@@ -10,7 +10,7 @@ def client
 end
 
 post '/callback' do
-  LINE::Bot::API::DEFAULT_ENDPOINT = "https://api.line-beta.me/v2/bot"
+  Line::Bot::API::DEFAULT_ENDPOINT = "https://api.line-beta.me/v2/bot"
   body = request.body.read
   puts "request.body:------------"
   puts body
