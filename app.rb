@@ -24,7 +24,7 @@ post '/callback' do
     case event
     when Line::Bot::Event::Message
       case event.type
-        puts 'header:'+ headers
+        puts "header:"+ headers
       when Line::Bot::Event::MessageType::Text
         message = {
           type: 'text',
