@@ -2,6 +2,14 @@
 require 'sinatra'
 require 'line/bot'
 
+module Line
+  module Bot
+    module API
+      DEFAULT_ENDPOINT = "https://api.line-beta.me/v2/bot"
+    end
+  end
+end
+
 def client
   @client ||= Line::Bot::Client.new { |config|
     config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
