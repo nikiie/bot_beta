@@ -25,10 +25,9 @@ post '/callback' do
     when Line::Bot::Event::Message
       case event.type
       when Line::Bot::Event::MessageType::Text
-        puts "プッシュしてるぞ"
         message = {
           type: 'text',
-          text: event.message['text']+'a'
+          text: event.message['text']
         }
         client.reply_message(event['replyToken'], message)
       when Line::Bot::Event::MessageType::Image, Line::Bot::Event::MessageType::Video
